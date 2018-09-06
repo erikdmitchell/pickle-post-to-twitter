@@ -1,6 +1,8 @@
 jQuery(document).ready(function($) {
    
     // initial show of textbox.
+    var orgTextValue = $('#pickle-twitter-text').val();
+    
     if ($('.misc-pub-pickle-twitter input.pickle-post-to-twitter').is(':checked')) {
         $('#pickle-twitter-text-wrap').show();
     }
@@ -12,5 +14,17 @@ jQuery(document).ready(function($) {
         } else {
             $('#pickle-twitter-text-wrap').hide();
         }
-    });   
+    });
+    
+    // "ok" button click.
+    $('.save-pickle-twitter-text').on('click', function() {
+        $('#pickle-twitter-text-wrap').hide();
+    });
+    
+    // cancel button click.
+    $('.cancel-pickle-twitter-text').on('click', function() {
+        $('#pickle-twitter-text').val(orgTextValue);
+        
+        $('#pickle-twitter-text-wrap').hide();
+    });
 });
