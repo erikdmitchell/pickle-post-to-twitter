@@ -24,7 +24,7 @@ class Pickle_Twitter_Admin {
 
     /**
      * Admin menu.
-     * 
+     *
      * @access public
      * @return void
      */
@@ -34,7 +34,7 @@ class Pickle_Twitter_Admin {
 
     /**
      * Admin page(s).
-     * 
+     *
      * @access public
      * @return void
      */
@@ -72,7 +72,7 @@ class Pickle_Twitter_Admin {
 
     /**
      * Get admin page.
-     * 
+     *
      * @access public
      * @param bool $template_name (default: false).
      * @return html
@@ -99,7 +99,7 @@ class Pickle_Twitter_Admin {
 
     /**
      * Update settings.
-     * 
+     *
      * @access public
      * @return void
      */

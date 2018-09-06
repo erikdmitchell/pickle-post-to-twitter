@@ -33,9 +33,9 @@ final class Pickle_Twitter {
 
     /**
      * Twitter update.
-     * 
+     *
      * (default value: '')
-     * 
+     *
      * @var string
      * @access public
      */
