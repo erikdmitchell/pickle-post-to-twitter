@@ -1,13 +1,8 @@
-<h2>Settings</h2>
-
 <form class="pickle-twitter-settings-form" action="" method="post">
     <?php wp_nonce_field( 'update_settings', 'pickle_twitter_admin', true ); ?>  
     
     <h2>Twitter</h2>
-			get_option('uci_results_twitter_consumer_key', ''),
-			get_option('uci_results_twitter_consumer_secret', ''),
-			get_option('uci_results_twitter_access_token', ''),
-			get_option('uci_results_twitter_access_token_secret', '')    
+   
     <table class="form-table">
         <tbody>
         

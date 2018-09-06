@@ -100,3 +100,7 @@ class Pickle_Twitter_Admin {
         exit;
     }    
 }
+
+if (is_admin()) :
+    new Pickle_Twitter_Admin();
+endif;

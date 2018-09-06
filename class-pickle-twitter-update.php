@@ -26,12 +26,14 @@ class Pickle_Twitter_Update {
 	 * @return void
 	 */
 	public function __construct() {
+/*
 		$this->connection = new TwitterOAuth(
 			get_option('uci_results_twitter_consumer_key', ''),
 			get_option('uci_results_twitter_consumer_secret', ''),
 			get_option('uci_results_twitter_access_token', ''),
 			get_option('uci_results_twitter_access_token_secret', '')
 		);
+*/
 	}
 
 	/**

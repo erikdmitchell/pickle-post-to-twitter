@@ -51,11 +51,11 @@ final class Pickle_Twitter {
      * @return void
      */
     private function define_constants() {
-        $this->define( 'PICKLE_TWTTER_PATH', plugin_dir_path( __FILE__ ) );
-        $this->define( 'PICKLE_TWTTER_URL', plugin_dir_url( __FILE__ ) );
-        $this->define( 'PICKLE_TWTTER_VERSION', $this->version );
-        $this->define( 'PICKLE_TWTTER_REQUIRES', '3.8' );
-        $this->define( 'PICKLE_TWTTER_TESTED', '4.9.5' );
+        $this->define( 'PICKLE_TWITTER_PATH', plugin_dir_path( __FILE__ ) );
+        $this->define( 'PICKLE_TWITTER_URL', plugin_dir_url( __FILE__ ) );
+        $this->define( 'PICKLE_TWITTER_VERSION', $this->version );
+        $this->define( 'PICKLE_TWITTER_REQUIRES', '3.8' );
+        $this->define( 'PICKLE_TWITTER_TESTED', '4.9.5' );
     }
 
     /**
@@ -79,9 +79,9 @@ final class Pickle_Twitter {
      * @return void
      */
     public function includes() {
-        include_once(PICKLE_TWTTER_PATH.'lib/twitteroauth/autoload.php');
-        include_once( PICKLE_TWTTER_PATH . 'class-pickle-twitter-update.php' );
-        include_once( PICKLE_TWTTER_PATH . 'class-pickle-twitter-admin.php' );        
+        include_once( PICKLE_TWITTER_PATH.'lib/twitteroauth/autoload.php');
+        include_once( PICKLE_TWITTER_PATH . 'class-pickle-twitter-update.php' );
+        include_once( PICKLE_TWITTER_PATH . 'class-pickle-twitter-admin.php' );        
     }
 
     /**
