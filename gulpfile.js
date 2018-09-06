@@ -26,7 +26,7 @@ var buildInclude = [
 var phpSrc = [
         '**/*.php', // Include all files    
         '!node_modules/**/*', // Exclude node_modules
-        '!vendor/**' // Exclude vendor 
+        '!vendor/**', // Exclude vendor 
         '!lib/**' // Exclude lib   
     ];
 
