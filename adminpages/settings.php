@@ -14,12 +14,12 @@
         <tbody>
         
             <tr>
-                <th scope="row"><label for="consumer-key">Consumer Key</label></th>
+                <th scope="row"><label for="consumer-key">Consumer Key (API key)</label></th>
                 <td><input name="settings[consumer_key]" type="text" id="consumer-key" value="<?php echo pickle_twitter()->settings['consumer_key']; ?>" class="regular-text"></td>
             </tr>
         
             <tr>
-                <th scope="row"><label for="consumer-secret">Consumer secret</label></th>
+                <th scope="row"><label for="consumer-secret">Consumer Secret (API secret key)</label></th>
                 <td><input name="settings[consumer_secret]" type="text" id="consumer-secret" value="<?php echo pickle_twitter()->settings['consumer_secret']; ?>" class="regular-text"></td>
             </tr>
         
