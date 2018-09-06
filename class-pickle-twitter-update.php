@@ -14,7 +14,7 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 class Pickle_Twitter_Update {
 
     /**
-     * connection
+     * Connection
      *
      * @var mixed
      * @access protected
@@ -50,10 +50,10 @@ class Pickle_Twitter_Update {
 
         $msg = '';
 
-        // update status //
+        // update status.
         $status_post = $this->connection->post( 'statuses/update', [ 'status' => $status ] );
 
-        // check if it worked or not //
+        // check if it worked or not.
         if ( $this->connection->getLastHttpCode() == 200 ) :
             $msg = 'Twitter status updated.';
         else :
