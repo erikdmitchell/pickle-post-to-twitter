@@ -1,17 +1,17 @@
 <?php
 /**
- * Main Pickle Post to Twitter class
+ * Main Pickle Twitter class
  *
  * @package PickleTwitter
  * @since   1.0.0
  */
 
 /**
- * Final Pickle_Post_to_Twitter class.
+ * Final Pickle_Twitter class.
  *
  * @final
  */
-final class Pickle_Post_to_Twitter {
+final class Pickle_Twitter {
 
     /**
      * Version
@@ -175,7 +175,7 @@ final class Pickle_Post_to_Twitter {
  * @return class
  */
 function pickle_twitter() {
-    return new Pickle_Post_to_Twitter();
+    return new Pickle_Twitter();
 }
 
 // Global for backwards compatibility.

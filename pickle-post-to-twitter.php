@@ -25,7 +25,7 @@ if ( ! defined( 'PICKLE_TWITTER_PLUGIN_FILE' ) ) {
     define( 'PICKLE_TWITTER_PLUGIN_FILE', __FILE__ );
 }
 
-// Include the main Pickle_Post_to_Twitter class.
-if ( ! class_exists( 'Pickle_Post_to_Twitter' ) ) {
-    include_once dirname( __FILE__ ) . '/class-pickle-post-to-twitter.php';
+// Include the main Pickle_Twitter class.
+if ( ! class_exists( 'Pickle_Twitter' ) ) {
+    include_once dirname( __FILE__ ) . '/class-pickle-twitter.php';
 }
