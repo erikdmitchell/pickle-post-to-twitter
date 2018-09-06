@@ -22,10 +22,22 @@ class Pickle_Twitter_Admin {
         add_action( 'admin_menu', array( $this, 'admin_menu' ) );
     }
 
+    /**
+     * Admin menu.
+     * 
+     * @access public
+     * @return void
+     */
     public function admin_menu() {
         add_options_page( 'Pickle Twitter', 'Pickle Twitter', 'manage_options', 'pickle-twitter', array( $this, 'admin_page' ) );
     }
 
+    /**
+     * Admin page(s).
+     * 
+     * @access public
+     * @return void
+     */
     public function admin_page() {
         $html = null;
         $tabs = array(
@@ -58,6 +70,13 @@ class Pickle_Twitter_Admin {
         echo $html;
     }
 
+    /**
+     * Get admin page.
+     * 
+     * @access public
+     * @param bool $template_name (default: false).
+     * @return html
+     */
     public function get_admin_page( $template_name = false ) {
         if ( ! $template_name ) {
             return false;
@@ -78,6 +97,12 @@ class Pickle_Twitter_Admin {
         return $html;
     }
 
+    /**
+     * Update settings.
+     * 
+     * @access public
+     * @return void
+     */
     public function update_settings() {
         if ( ! isset( $_POST['pickle_twitter_admin'] ) || ! wp_verify_nonce( $_POST['pickle_twitter_admin'], 'update_settings' ) ) {
             return false;
@@ -99,6 +124,7 @@ class Pickle_Twitter_Admin {
     }
 }
 
+// only run if admin.
 if ( is_admin() ) :
     new Pickle_Twitter_Admin();
 endif;
