@@ -36,22 +36,27 @@ class Pickle_Twitter_Post {
         );
     }
 
-    /**
-     * Update status.
-     *
-     * @access public
-     * @param string $status (default: '').
-     * @return string
-     */
-    public function update_status( $status = '' ) {
+    public function update_status( $status = '', $media_url = '' ) {
         if ( empty( $status ) ) {
             return 'No status to update.';
         }
 
         $msg = '';
-
-        // update status.
-        $status_post = $this->connection->post( 'statuses/update', [ 'status' => $status ] );
+        
+        // setup media if need be.
+        if (!empty($media_url)) :
+            $media = $connection->upload('media/upload', ['media' => $media_url]);
+            
+            $parameters = [
+                'status' => $status,
+                'media_ids' => $media->media_id_string,
+            ];
+            
+            $status_post = $connection->post('statuses/update', $parameters);
+        else:
+            // update status.
+            $status_post = $this->connection->post( 'statuses/update', [ 'status' => $status ] );
+        endif;
 
         // check if it worked or not.
         if ( $this->connection->getLastHttpCode() == 200 ) :
