@@ -111,31 +111,16 @@ final class Pickle_Twitter {
      * @return array
      */
     public function settings() {
-        
-            	
-		$this->connection = new TwitterOAuth(
-			get_option('uci_results_twitter_consumer_key', ''),
-			get_option('uci_results_twitter_consumer_secret', ''),
-			get_option('uci_results_twitter_access_token', ''),
-			get_option('uci_results_twitter_access_token_secret', '')
-		);
-        
-        
         $default_settings = array(
-            'adminlabel' => 'Events',
-            'cpt_single' => 'Event',
-            'cpt_plural' => 'Events',
-            'enable_editor' => false,
-            'show_start_date' => true,
-            'show_end_date' => true,
-            'hide_weekends' => false,
+            'consumer_key' => '',
+            'consumer_secret' => '',
+            'access_token' => '',
+            'access_token_secret' => '',
         );
 
-        $db_settings = get_option( 'pickle_calendar_settings', '' );
+        $db_settings = get_option( 'pickle_twitter_settings', '' );
 
         $settings = $this->parse_args( $db_settings, $default_settings );
-
-        $settings['taxonomies'] = get_option( 'pickle_calendar_taxonomies', '' );
 
         return $settings;
     }
@@ -147,7 +132,7 @@ final class Pickle_Twitter {
      * @return void
      */
     public function update_settings() {
-        //$this->settings = $this->settings();
+        $this->settings = $this->settings();
     }
 
     /**
