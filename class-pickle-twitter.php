@@ -79,9 +79,9 @@ final class Pickle_Twitter {
      * @return void
      */
     public function includes() {
-        include_once( PICKLE_TWITTER_PATH.'lib/twitteroauth/autoload.php');
+        include_once( PICKLE_TWITTER_PATH . 'lib/twitteroauth/autoload.php' );
         include_once( PICKLE_TWITTER_PATH . 'class-pickle-twitter-update.php' );
-        include_once( PICKLE_TWITTER_PATH . 'class-pickle-twitter-admin.php' );        
+        include_once( PICKLE_TWITTER_PATH . 'class-pickle-twitter-admin.php' );
     }
 
     /**
@@ -91,7 +91,7 @@ final class Pickle_Twitter {
      * @return void
      */
     private function init_hooks() {
-        //register_activation_hook( PICKLE_TWITTER_PLUGIN_FILE, array( 'Pickle_Calendar_Install', 'install' ) );
+        // register_activation_hook( PICKLE_TWITTER_PLUGIN_FILE, array( 'Pickle_Calendar_Install', 'install' ) );
     }
 
     /**
