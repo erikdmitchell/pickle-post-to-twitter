@@ -2,7 +2,14 @@
     <?php wp_nonce_field( 'update_settings', 'pickle_twitter_admin', true ); ?>  
     
     <h2>Twitter</h2>
-   
+    
+    <ol>
+        <li>To get started go to <a href="https://apps.twitter.com">https://apps.twitter.com/</a>.</li>
+        <li>Click on the 'Apply for developer account' button and follow the steps.</li> 
+        <li>Once you have completed the steps, click on the "Create and App" button and follow the steps.</li>
+        <li>Once the app is created click on "Keys and tokens". Then enter the information below.</li>
+    </ol>
+    
     <table class="form-table">
         <tbody>
         
