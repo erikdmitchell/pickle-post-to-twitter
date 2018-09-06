@@ -43,7 +43,7 @@ class Pickle_Twitter_Admin {
         $tabs = array(
             'settings' => 'Settings',
         );
-        $active_tab = isset( $_GET['tab'] ) ? $_GET['tab'] : 'settings';
+        $active_tab = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['tab'] ) ) : 'settings';
 
         $html .= '<div class="wrap pickle-twitter-admin">';
             $html .= '<h1>Pickle Twitter</h1>';
@@ -101,25 +101,29 @@ class Pickle_Twitter_Admin {
      * Update settings.
      *
      * @access public
-     * @return void
+     * @return boolean
      */
     public function update_settings() {
-        if ( ! isset( $_POST['pickle_twitter_admin'] ) || ! wp_verify_nonce( $_POST['pickle_twitter_admin'], 'update_settings' ) ) {
+        $url = '';
+        $post_settings = '';
+
+        if ( ! isset( $_POST['pickle_twitter_admin'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['pickle_twitter_admin'] ) ), 'update_settings' ) ) {
             return false;
         }
 
-        $new_settings = pickle_twitter()->parse_args( $_POST['settings'], pickle_twitter()->settings );
+        if ( isset( $_POST['_wp_http_referer'] ) ) :
+            $url = esc_url_raw( wp_unslash( $_POST['_wp_http_referer'] ) );
+        endif;
 
-        // for checkboxes //
-        foreach ( $new_settings as $key => $value ) :
-            if ( ! isset( $_POST['settings'][ $key ] ) ) :
-                $new_settings[ $key ] = 0;
-            endif;
-        endforeach;
+        if ( isset( $_POST['settings'] ) ) :
+            $post_settings = sanitize_text_field( wp_unslash( $_POST['settings'] ) );
+        endif;
+
+        $new_settings = pickle_twitter()->parse_args( $post_settings, pickle_twitter()->settings );
 
         update_option( 'pickle_twitter_settings', $new_settings );
 
-        wp_redirect( site_url( $_POST['_wp_http_referer'] ) );
+        wp_redirect( site_url( $url ) );
         exit;
     }
 }
