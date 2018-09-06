@@ -63,7 +63,7 @@
             
             $status = $image . $text;
             
-            pickle_twitter()->update_status($status);       
+            $message = pickle_twitter()->update_twitter_status($status);       
         endif;
     }
 }

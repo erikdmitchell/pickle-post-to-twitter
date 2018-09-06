@@ -32,16 +32,6 @@ final class Pickle_Twitter {
     public $settings = '';
 
     /**
-     * Notices
-     * 
-     * (default value: array())
-     * 
-     * @var array
-     * @access protected
-     */
-    protected $notices = array();
-
-    /**
      * Construct function.
      *
      * @access public
@@ -146,13 +136,19 @@ final class Pickle_Twitter {
         $this->settings = $this->settings();
     }
     
-    public function update_status($status = '') {
+    /**
+     * Update twitter status.
+     * 
+     * @access public
+     * @param string $status (default: '')
+     * @return void
+     */
+    public function update_twitter_status($status = '') {
         $twitter_post = new Pickle_Twitter_Post();
-        $message = $twitter_post->update_status($status);
-
+        $response = $twitter_post->update_status($status);
+        
+        return $response;
     }
-    
-    public function 
 
     /**
      * Parse args function.
