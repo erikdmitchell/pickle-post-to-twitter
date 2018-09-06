@@ -59,10 +59,12 @@
         // only run this if post to twitter is checked.
         if (isset($_POST['pickle_twitter']['post']) && 1 == $_POST['pickle_twitter']['post'] ) :
             $image = get_the_post_thumbnail($post_id, 'full');
-            $text = $_POST['pickle_twitter']['text'];
-            $url = get_permalink($post_id);       
+            $text = $_POST['pickle_twitter']['text'].' '.get_permalink($post_id);
+            
+            $status = $image . $text;
+            
+            pickle_twitter()->update_status($status);       
         endif;
-exit;        
     }
 }
 

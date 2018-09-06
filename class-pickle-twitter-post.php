@@ -67,5 +67,3 @@ class Pickle_Twitter_Post {
         return $msg;
     }
 }
-
-pickle_twitter()->twitter_post = new Pickle_Twitter_Post();
