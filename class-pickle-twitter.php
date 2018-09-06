@@ -32,6 +32,16 @@ final class Pickle_Twitter {
     public $settings = '';
 
     /**
+     * Twitter update.
+     * 
+     * (default value: '')
+     * 
+     * @var string
+     * @access public
+     */
+    public $twitter_update = '';
+
+    /**
      * Construct function.
      *
      * @access public

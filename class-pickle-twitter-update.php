@@ -6,6 +6,8 @@
  * @since   1.0.0
  */
 
+use Abraham\TwitterOAuth\TwitterOAuth;
+
 /**
  * Pickle_Twitter_Update class.
  */
@@ -26,14 +28,12 @@ class Pickle_Twitter_Update {
      * @return void
      */
     public function __construct() {
-        /*
         $this->connection = new TwitterOAuth(
-            get_option('uci_results_twitter_consumer_key', ''),
-            get_option('uci_results_twitter_consumer_secret', ''),
-            get_option('uci_results_twitter_access_token', ''),
-            get_option('uci_results_twitter_access_token_secret', '')
+            pickle_twitter()->settings['consumer_key'],
+            pickle_twitter()->settings['consumer_secret'],
+            pickle_twitter()->settings['access_token'],
+            pickle_twitter()->settings['access_token_secret']
         );
-        */
     }
 
     /**
@@ -67,3 +67,6 @@ class Pickle_Twitter_Update {
         return $msg;
     }
 }
+
+
+pickle_twitter()->twitter_update = new Pickle_Twitter_Update();
