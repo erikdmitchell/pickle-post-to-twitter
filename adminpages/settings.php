@@ -1,3 +1,13 @@
+<?php
+/**
+ * Admin settings page
+ *
+ * @package PickleTwitter
+ * @since   1.0.0
+ */
+
+?>
+
 <form class="pickle-twitter-settings-form" action="" method="post">
     <?php wp_nonce_field( 'update_settings', 'pickle_twitter_admin', true ); ?>  
     
@@ -15,22 +25,22 @@
         
             <tr>
                 <th scope="row"><label for="consumer-key">Consumer Key (API key)</label></th>
-                <td><input name="settings[consumer_key]" type="text" id="consumer-key" value="<?php echo pickle_twitter()->settings['consumer_key']; ?>" class="regular-text"></td>
+                <td><input name="settings[consumer_key]" type="text" id="consumer-key" value="<?php echo esc_attr( pickle_twitter()->settings['consumer_key'] ); ?>" class="regular-text"></td>
             </tr>
         
             <tr>
                 <th scope="row"><label for="consumer-secret">Consumer Secret (API secret key)</label></th>
-                <td><input name="settings[consumer_secret]" type="text" id="consumer-secret" value="<?php echo pickle_twitter()->settings['consumer_secret']; ?>" class="regular-text"></td>
+                <td><input name="settings[consumer_secret]" type="text" id="consumer-secret" value="<?php echo esc_attr( pickle_twitter()->settings['consumer_secret'] ); ?>" class="regular-text"></td>
             </tr>
         
             <tr>
                 <th scope="row"><label for="access-token">Access Token</label></th>
-                <td><input name="settings[access_token]" type="text" id="access-token" value="<?php echo pickle_twitter()->settings['access_token']; ?>" class="regular-text"></td>
+                <td><input name="settings[access_token]" type="text" id="access-token" value="<?php echo esc_attr( pickle_twitter()->settings['access_token'] ); ?>" class="regular-text"></td>
             </tr>
 
             <tr>
                 <th scope="row"><label for="access-token-secret">Access Token Secret</label></th>
-                <td><input name="settings[access_token_secret]" type="text" id="access-token-secret" value="<?php echo pickle_twitter()->settings['access_token_secret']; ?>" class="regular-text"></td>
+                <td><input name="settings[access_token_secret]" type="text" id="access-token-secret" value="<?php echo esc_attr( pickle_twitter()->settings['access_token_secret'] ); ?>" class="regular-text"></td>
             </tr>
         
         </tbody>                
