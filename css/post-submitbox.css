@@ -11,6 +11,11 @@
     content: "\f301";
 }
 
+.edit-pickle-twitter-text {
+    display: inline;
+    margin-left: 5px;
+}
+
 #pickle-twitter-text-wrap {
     display: none;
     margin-top: 3px;

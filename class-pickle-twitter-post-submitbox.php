@@ -42,10 +42,11 @@
         
         $html .= '<div class="misc-pub-section misc-pub-pickle-twitter">';
             $html .= '<label><input type="checkbox"' . (empty($checkbox) ? ' checked="checked" ' : null) . ' value="1" class="pickle-post-to-twitter" name="pickle_twitter[post]" /> Post to Twitter</label>';
+            $html .= '<a href="#pickle-twitter-text-edit" class="edit-pickle-twitter-text hide-if-no-js" role="button"><span aria-hidden="true">Edit</span></a>';
             $html .= '<div id="pickle-twitter-text-wrap">';
                 $html .= '<input type="text" id="pickle-twitter-text" name="pickle_twitter[text]" value="'.$text.'" />';
-                $html .= '<a href="#pickle-twitter-text" class="save-pickle-twitter-text hide-if-no-js button">OK</a>';
-                $html .= '<a href="#pickle-twitter-text" class="cancel-pickle-twitter-text hide-if-no-js button-cancel">Cancel</a>';
+                $html .= '<a href="#pickle-twitter-text-save" class="save-pickle-twitter-text hide-if-no-js button">OK</a>';
+                $html .= '<a href="#pickle-twitter-text-cancel" class="cancel-pickle-twitter-text hide-if-no-js button-cancel">Cancel</a>';
             $html .= '</div>';
         $html .= '</div>';
         
