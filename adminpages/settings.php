@@ -1,7 +1,7 @@
 <h2>Settings</h2>
 
-<form class="pickle-calendar-settings-form" action="" method="post">
-    <?php wp_nonce_field( 'update_settings', 'pickle_calendar_admin', true ); ?>  
+<form class="pickle-twitter-settings-form" action="" method="post">
+    <?php wp_nonce_field( 'update_settings', 'pickle_twitter_admin', true ); ?>  
     
     <h2>General</h2>
     

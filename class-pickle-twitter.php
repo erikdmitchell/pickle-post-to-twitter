@@ -81,6 +81,7 @@ final class Pickle_Twitter {
     public function includes() {
         include_once(PICKLE_TWTTER_PATH.'lib/twitteroauth/autoload.php');
         include_once( PICKLE_TWTTER_PATH . 'class-pickle-twitter-update.php' );
+        include_once( PICKLE_TWTTER_PATH . 'class-pickle-twitter-admin.php' );        
     }
 
     /**
@@ -100,9 +101,7 @@ final class Pickle_Twitter {
      * @return void
      */
     public function init() {
-        //$this->settings = $this->settings();
-        //$this->calendar = new Pickle_Calendar();
-        //$this->import_export_events = new Pickle_Calendar_Import_Export_Events();
+        $this->settings = $this->settings();
     }
 
     /**
@@ -112,7 +111,16 @@ final class Pickle_Twitter {
      * @return array
      */
     public function settings() {
-/*
+        
+            	
+		$this->connection = new TwitterOAuth(
+			get_option('uci_results_twitter_consumer_key', ''),
+			get_option('uci_results_twitter_consumer_secret', ''),
+			get_option('uci_results_twitter_access_token', ''),
+			get_option('uci_results_twitter_access_token_secret', '')
+		);
+        
+        
         $default_settings = array(
             'adminlabel' => 'Events',
             'cpt_single' => 'Event',
@@ -130,7 +138,6 @@ final class Pickle_Twitter {
         $settings['taxonomies'] = get_option( 'pickle_calendar_taxonomies', '' );
 
         return $settings;
-*/
     }
 
     /**
