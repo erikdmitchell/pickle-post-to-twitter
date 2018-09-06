@@ -11,6 +11,8 @@
   * Pickle_Twitter_Post_Submitbox class.
   */
  class Pickle_Twitter_Post_Submitbox {
+     
+     public $admin_message = '';
 
     /**
      * __construct function.
@@ -19,15 +21,30 @@
      * @return void
      */
     public function __construct() {
+        add_action( 'admin_enqueue_scripts' , array($this, 'admin_scripts_styles'));
+        add_action('admin_notices', array($this, 'admin_notices'));
         add_action( 'post_submitbox_misc_actions', array($this, 'post_submitbox_twitter_details' ) );
         add_action( 'save_post', array($this, 'post_submitbox_twitter_save'), 10, 3);
-        add_action( 'admin_enqueue_scripts' , array($this, 'admin_scripts_styles'));
+        
     }
     
     public function admin_scripts_styles() {
         wp_enqueue_script('pickle-twitter-post-submitbox-script', PICKLE_TWITTER_URL.'js/post-submitbox.js', array('jquery'), PICKLE_TWITTER_VERSION, true);
         
         wp_enqueue_style('pickle-twitter-post-submitbox-style', PICKLE_TWITTER_URL.'css/post-submitbox.css', '', PICKLE_TWITTER_VERSION);
+    }
+    
+    public function admin_notices() {
+        if ( ! isset( $_GET['pickle_twitter_notice'] ) ) {
+            return;
+        }
+        ?>
+        
+        <div class="notice notice-info is-dismissible">
+            <p><?php esc_html_e( $_GET['pickle_twitter_notice'], 'pickle-twitter' ); ?></p>
+        </div>
+        
+        <?php       
     }
 
     public function post_submitbox_twitter_details( $post ) {
@@ -63,8 +80,17 @@
             
             $status = $image . $text;
             
-            $message = pickle_twitter()->update_twitter_status($status);       
+            $this->admin_message = pickle_twitter()->update_twitter_status($status); 
+            
+            // Add your query var if the coordinates are not retreive correctly.
+            add_filter( 'redirect_post_location', array( $this, 'add_notice_query_var' ), 99 );      
         endif;
+    }
+    
+    public function add_notice_query_var( $location ) {
+        remove_filter( 'redirect_post_location', array( $this, 'add_notice_query_var' ), 99 );
+        
+        return add_query_arg( array( 'pickle_twitter_notice' => urlencode( $this->admin_message ) ), $location );
     }
 }
 
