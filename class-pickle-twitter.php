@@ -92,7 +92,7 @@ final class Pickle_Twitter {
      * @return void
      */
     private function init_hooks() {
-        add_action('admin_notices', array($this, 'admin_notices'));
+        add_action( 'admin_notices', array( $this, 'admin_notices' ) );
     }
 
     /**
@@ -135,18 +135,18 @@ final class Pickle_Twitter {
     public function update_settings() {
         $this->settings = $this->settings();
     }
-    
+
     /**
      * Update twitter status.
-     * 
+     *
      * @access public
      * @param string $status (default: '')
      * @return void
      */
-    public function update_twitter_status($status = '') {
+    public function update_twitter_status( $status = '' ) {
         $twitter_post = new Pickle_Twitter_Post();
-        $response = $twitter_post->update_status($status);
-        
+        $response = $twitter_post->update_status( $status );
+
         return $response;
     }
 
