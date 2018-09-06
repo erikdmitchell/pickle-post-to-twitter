@@ -36,7 +36,7 @@ class Pickle_Twitter_Post {
         );
     }
 
-    public function update_status( $status = '', $media_url = '' ) {
+    public function update_status( $status = '', $media_path = '' ) {
         if ( empty( $status ) ) {
             return 'No status to update.';
         }
@@ -45,7 +45,7 @@ class Pickle_Twitter_Post {
         
         // setup media if need be.
         if (!empty($media_url)) :
-            $media = $connection->upload('media/upload', ['media' => $media_url]);
+            $media = $connection->upload('media/upload', ['media' => $media_path]);
             
             $parameters = [
                 'status' => $status,

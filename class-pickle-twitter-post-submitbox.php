@@ -111,10 +111,11 @@ class Pickle_Twitter_Post_Submitbox {
 
         // only run this if post to twitter is checked.
         if ( isset( $_POST['pickle_twitter']['post'] ) && 1 == $_POST['pickle_twitter']['post'] ) :
-            $image_url = get_the_post_thumbnail_url($post_id, 'full');
+            //$image_url = get_the_post_thumbnail_url($post_id, 'full');
+            $image_path = get_attached_file( get_post_thumbnail_id($post_id) );
             $text = $_POST['pickle_twitter']['text'] . ' ' . get_permalink( $post_id );
 
-            $this->admin_message = pickle_twitter()->update_twitter_status( $text, $image_url );
+            $this->admin_message = pickle_twitter()->update_twitter_status( $text, $image_path );
 
             // Add your query var if the coordinates are not retreive correctly.
             add_filter( 'redirect_post_location', array( $this, 'add_notice_query_var' ), 99 );
