@@ -1,6 +1,6 @@
 <?php
 /**
- * Main Pickle Twitter update class
+ * Main Pickle Twitter post class
  *
  * @package PickleTwitter
  * @since   1.0.0
@@ -9,9 +9,9 @@
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 /**
- * Pickle_Twitter_Update class.
+ * Pickle_Twitter_Post class.
  */
-class Pickle_Twitter_Update {
+class Pickle_Twitter_Post {
 
     /**
      * Connection
@@ -68,4 +68,4 @@ class Pickle_Twitter_Update {
     }
 }
 
-pickle_twitter()->twitter_update = new Pickle_Twitter_Update();
+pickle_twitter()->twitter_post = new Pickle_Twitter_Post();

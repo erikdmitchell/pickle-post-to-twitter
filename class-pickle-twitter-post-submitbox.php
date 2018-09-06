@@ -54,7 +54,15 @@
     }
     
     public function post_submitbox_twitter_save($post_id, $post, $update) {
-        update_post_meta($post_id, '_pickle_twitter_posted', 1);
+        update_post_meta($post_id, '_pickle_twitter_posted', 1); // set this so we know it's already been done.
+       
+        // only run this if post to twitter is checked.
+        if (isset($_POST['pickle_twitter']['post']) && 1 == $_POST['pickle_twitter']['post'] ) :
+            $image = get_the_post_thumbnail($post_id, 'full');
+            $text = $_POST['pickle_twitter']['text'];
+            $url = get_permalink($post_id);       
+        endif;
+exit;        
     }
 }
 

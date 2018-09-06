@@ -32,14 +32,14 @@ final class Pickle_Twitter {
     public $settings = '';
 
     /**
-     * Twitter update.
+     * Twitter post.
      *
      * (default value: '')
      *
      * @var string
      * @access public
      */
-    public $twitter_update = '';
+    public $twitter_post = '';
 
     /**
      * Construct function.
@@ -90,7 +90,7 @@ final class Pickle_Twitter {
      */
     public function includes() {
         include_once( PICKLE_TWITTER_PATH . 'lib/twitteroauth/autoload.php' );
-        include_once( PICKLE_TWITTER_PATH . 'class-pickle-twitter-update.php' );
+        include_once( PICKLE_TWITTER_PATH . 'class-pickle-twitter-post.php' );
         include_once( PICKLE_TWITTER_PATH . 'class-pickle-twitter-admin.php' );
         include_once( PICKLE_TWITTER_PATH . 'class-pickle-twitter-post-submitbox.php' );
     }
