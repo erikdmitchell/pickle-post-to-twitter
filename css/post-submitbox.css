@@ -1,0 +1,17 @@
+#post-body .misc-pub-pickle-twitter:before {
+    font: normal 20px/1 dashicons;
+    speak: none;
+    display: inline-block;
+    margin-left: -1px;
+    padding-right: 3px;
+    vertical-align: top;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #82878c;
+    content: "\f301";
+}
+
+#pickle-twitter-text-wrap {
+    display: none;
+    margin-top: 3px;
+}

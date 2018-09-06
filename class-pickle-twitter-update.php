@@ -1,6 +1,6 @@
 <?php
 /**
- * Main Pickle Twitter class
+ * Main Pickle Twitter update class
  *
  * @package PickleTwitter
  * @since   1.0.0
@@ -67,6 +67,5 @@ class Pickle_Twitter_Update {
         return $msg;
     }
 }
-
 
 pickle_twitter()->twitter_update = new Pickle_Twitter_Update();

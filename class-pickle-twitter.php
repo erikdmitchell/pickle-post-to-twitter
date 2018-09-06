@@ -92,6 +92,7 @@ final class Pickle_Twitter {
         include_once( PICKLE_TWITTER_PATH . 'lib/twitteroauth/autoload.php' );
         include_once( PICKLE_TWITTER_PATH . 'class-pickle-twitter-update.php' );
         include_once( PICKLE_TWITTER_PATH . 'class-pickle-twitter-admin.php' );
+        include_once( PICKLE_TWITTER_PATH . 'class-pickle-twitter-post-submitbox.php' );
     }
 
     /**
