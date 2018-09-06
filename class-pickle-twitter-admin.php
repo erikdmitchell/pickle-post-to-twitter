@@ -83,8 +83,7 @@ class Pickle_Twitter_Admin {
             return false;
         }
 
-        /*
-        $new_settings = picklecalendar()->parse_args( $_POST['settings'], picklecalendar()->settings );
+        $new_settings = pickle_twitter()->parse_args( $_POST['settings'], pickle_twitter()->settings );
 
         // for checkboxes //
         foreach ( $new_settings as $key => $value ) :
@@ -93,8 +92,7 @@ class Pickle_Twitter_Admin {
             endif;
         endforeach;
 
-        update_option( 'pickle_calendar_settings', $new_settings );
-        */
+        update_option( 'pickle_twitter_settings', $new_settings );
 
         wp_redirect( site_url( $_POST['_wp_http_referer'] ) );
         exit;
