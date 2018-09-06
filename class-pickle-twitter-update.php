@@ -1,18 +1,22 @@
 <?php
-require_once(UCI_RESULTS_PATH.'lib/twitteroauth/autoload.php');
-
-use Abraham\TwitterOAuth\TwitterOAuth;
-
-global $uci_results_twitter;
+/**
+ * Main Pickle Twitter class
+ *
+ * @package PickleTwitter
+ * @since   1.0.0
+ */
 
 /**
- * UCIResultsTwitter class.
- *
- * since v2.0
- *
+ * Pickle_Twitter_Update class.
  */
-class UCIResultsTwitter {
+class Pickle_Twitter_Update {
 
+	/**
+	 * connection
+	 * 
+	 * @var mixed
+	 * @access protected
+	 */
 	protected $connection;
 
 	/**
@@ -31,11 +35,11 @@ class UCIResultsTwitter {
 	}
 
 	/**
-	 * update_status function.
+	 * Update status.
 	 *
 	 * @access public
-	 * @param string $status (default: '')
-	 * @return void
+	 * @param string $status (default: '').
+	 * @return string
 	 */
 	public function update_status($status='') {
 		if (empty($status))
@@ -50,7 +54,7 @@ class UCIResultsTwitter {
 		if ($this->connection->getLastHttpCode() == 200) :
 			$msg="Twitter status updated.";
 		else :
-	  	$msg="Tweet failed to send: ";
+	  	    $msg="Tweet failed to send: ";
 
 			foreach ($status_post->errors as $error) :
 				$msg.=$error->message;
@@ -59,33 +63,4 @@ class UCIResultsTwitter {
 
 		return $msg;
 	}
-}
-
-$uci_results_twitter=new UCIResultsTwitter();
-
-
-/**
- * uci_results_post_results_to_twitter function.
- *
- * @access public
- * @return void
- */
-function uci_results_post_results_to_twitter() {
-	if (get_option('uci_results_post_results_to_twitter', 0))
-		return true;
-
-	return false;
-}
-
-/**
- * uci_results_post_rankings_updates_to_twitter function.
- *
- * @access public
- * @return void
- */
-function uci_results_post_rankings_updates_to_twitter() {
-	if (get_option('uci_results_post_rankings_to_twitter', 0))
-		return true;
-
-	return false;
 }

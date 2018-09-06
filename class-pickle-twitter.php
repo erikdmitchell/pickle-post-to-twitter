@@ -79,7 +79,8 @@ final class Pickle_Twitter {
      * @return void
      */
     public function includes() {
-        //include_once( PICKLE_TWTTER_PATH . 'update-functions.php' );
+        include_once(PICKLE_TWTTER_PATH.'lib/twitteroauth/autoload.php');
+        include_once( PICKLE_TWTTER_PATH . 'class-pickle-twitter-update.php' );
     }
 
     /**
