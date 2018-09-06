@@ -100,9 +100,7 @@ final class Pickle_Twitter {
      * @access private
      * @return void
      */
-    private function init_hooks() {
-        // register_activation_hook( PICKLE_TWITTER_PLUGIN_FILE, array( 'Pickle_Calendar_Install', 'install' ) );
-    }
+    private function init_hooks() {}
 
     /**
      * Init function.

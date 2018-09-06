@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: Pickle Post to Twitter
  * Plugin URI:
