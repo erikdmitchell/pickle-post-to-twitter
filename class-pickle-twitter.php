@@ -92,7 +92,7 @@ final class Pickle_Twitter {
      * @return void
      */
     private function init_hooks() {
-        add_action( 'admin_notices', array( $this, 'admin_notices' ) );
+        //add_action( 'admin_notices', array( $this, 'admin_notices' ) );
     }
 
     /**
